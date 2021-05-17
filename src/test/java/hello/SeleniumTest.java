@@ -1,4 +1,4 @@
-package com.hello;
+package hello;
 
 import org.junit.Assert;
 import org.junit.Test;
