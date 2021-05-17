@@ -39,7 +39,7 @@ pipeline {
         echo 'Artifact Push...'
      }
    }
-   stage('Deploy') {
+   stage('Deploy to dev') {
 	      steps{
 		      
 		   script {
@@ -48,30 +48,20 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.9.220 "pwd; ls -ltr; java -jar gs-spring-boot-1.0.1.jar 2>> /dev/null >> /dev/null &"; sleep 10; ps -ef |grep java'
 		   }                 
 	      } 
+		       sh 'curl http://65.2.108.33:8080'	  
+                       echo 'Deploy to dev...'
         }
    }
-    stage('Smoke Test') {
-     steps {       			       
-	     sh 'curl http://65.2.108.33:8080'	  
-        echo 'Smoke Test...'
+    stage('Deploy to QA') {
+     steps {       			       	       
+        echo 'Deploy to QA...'
 		     }
    } 
-    stage('Functional Test') {
+    stage('Deploy to Production') {
      steps {	     
-				    	//sh('SeleniumTest.java')	
-	                               
-				  //    step([$class : 'Publisher', reportFilenamePattern : '**/testng-results.xml'])  
-	           
-			
-        echo 'Functional Test...'
+				    
+        echo 'Deploy to Production...'
      }
-   }
-   stage('Email Notification') {
-     steps {
-	    // mail bcc: '', body: '''Hi all,
-              //The pipeline run successfully.''', cc: '', from: '', replyTo: '', subject: 'Jenkins pipeline', to: 'hariharasudhan9894@gmail.com'
-        echo 'Email Notification...'
-     }
-   }
+   }  
   }
 }
