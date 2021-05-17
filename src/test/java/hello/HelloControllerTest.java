@@ -34,16 +34,7 @@ public class HelloControllerTest {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo(" Welcome to Flogile Technologies!")));
-                 WebDriver driver;
-                 System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-                 ChromeOptions options = new ChromeOptions();
-                    //options.addArguments("headless");
-                options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors","--disable-extensions","--no-sandbox","--disable-dev-shm-usage");
-                driver = new ChromeDriver(options);
-               // driver.get("https://www.google.com");
-                driver.get("http://65.2.108.33:8080/");
-                //System.out.println(driver.getTitle());
-               // Assert.assertTrue("Page title is not correct",driver.getTitle().equals("65.2.108.33:8080"));
+                 
     }
     
    
