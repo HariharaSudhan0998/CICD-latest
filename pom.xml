@@ -5,7 +5,7 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>gs-spring-boot</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -52,7 +52,7 @@
 					
 		<repository>
 		    <id>nexus-releases</id>	          
-		    <url>http://65.1.231.149:8081/repository/spring-boot1</url>
+		    <url>http://65.1.231.149:8081/repository/testing</url>
 		</repository>
   	</distributionManagement>
 
