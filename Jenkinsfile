@@ -39,7 +39,7 @@ pipeline {
         echo 'Artifact Push...'
      }
    }
-   stage('Deploy to dev') {
+   stage('Deploy to Test') {
 	      steps{
 		      
 		   script {
@@ -48,20 +48,27 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.9.220 "pwd; ls -ltr; java -jar gs-spring-boot-1.0.1.jar 2>> /dev/null >> /dev/null &"; sleep 10; ps -ef |grep java'
 		   }                 
 	      } 
-		       sh 'curl http://65.2.108.33:8080'	  
+		       	  
                        echo 'Deploy to dev...'
         }
    }
-    stage('Deploy to QA') {
+     stage('Functional Test') {
      steps {       			       	       
-        echo 'Deploy to QA...'
+        echo 'Functional Test...'
 		     }
    } 
-    stage('Deploy to Production') {
+     stage('Deploy to Production') {
      steps {	     
 				    
         echo 'Deploy to Production...'
      }
    }  
+      stage('Smoke Test') {
+      steps {       		
+	     
+	    // sh 'curl http://65.2.108.33:8080'
+        echo 'Smoke Test...'
+		     }
+   } 
   }
 }
