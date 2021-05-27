@@ -63,12 +63,12 @@ pipeline {
         echo 'Deploy to Production...'
      }
    }  */
-     /* stage('Smoke Test') {
+     stage('Smoke Test') {
       steps {       		
 	     
 	    // sh 'curl http://65.2.108.33:8080'
         echo 'Smoke Test...'
 		     }
-   } */
+   } 
   }
 }
