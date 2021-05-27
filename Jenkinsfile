@@ -57,12 +57,12 @@ pipeline {
         echo 'Functional Test...'
 		     }
    } */
-     stage('Deploy to Production') {
+    /* stage('Deploy to Production') {
      steps {	     
 				    
         echo 'Deploy to Production...'
      }
-   }  
+   }  */
       stage('Smoke Test') {
       steps {       		
 	     
