@@ -39,7 +39,7 @@ pipeline {
         echo 'Artifact Push...'
      }
    }
-   stage('Deploy to Test') {
+  /* stage('Deploy to Test') {
 	      steps{
 		      
 		   script {
@@ -51,7 +51,7 @@ pipeline {
 		       	  
                        echo 'Deploy to dev...'
         }
-   }
+   }*/
      /*stage('Functional Test') {
      steps {       			       	       
         echo 'Functional Test...'
