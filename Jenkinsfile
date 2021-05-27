@@ -52,11 +52,11 @@ pipeline {
                        echo 'Deploy to dev...'
         }
    }
-     stage('Functional Test') {
+     /*stage('Functional Test') {
      steps {       			       	       
         echo 'Functional Test...'
 		     }
-   } 
+   } */
      stage('Deploy to Production') {
      steps {	     
 				    
